@@ -23,12 +23,14 @@ project "Sandbox"
         "src/",
         "%{na2}include/",
         "%{na2}%{IncludeDirectories.fmt}",
+        "%{na2}%{IncludeDirectories.glfw}",
         "%{na2}dependencies/"
     }
 
     links {
         "Natrium2",
-        "fmt"
+        "%{Libraries.fmt}",
+        "%{Libraries.glfw}",
     }
 
     filter "system:linux"
@@ -36,7 +38,10 @@ project "Sandbox"
 
         }
 
-        defines { "NA2_PLATFORM_LINUX" }
+        defines {
+            "NA2_PLATFORM_LINUX",
+            "NA2_USE_GLFW",
+        }
 
     filter "system:windows"
         includedirs {
@@ -51,7 +56,10 @@ project "Sandbox"
             
         }
 
-        defines { "NA2_PLATFORM_WINDOWS" }
+        defines {
+            "NA2_PLATFORM_WINDOWS",
+            "NA2_USE_GLFW",
+        }
 
         buildoptions { "/utf-8" }
 
