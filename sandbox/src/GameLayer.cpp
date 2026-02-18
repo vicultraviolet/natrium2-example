@@ -3,10 +3,20 @@
 
 namespace Sandbox
 {
-	GameLayer::GameLayer(i64 priority)
+	GameLayer::GameLayer(
+		Na2::AssetManager& asset_manager,
+		i64 priority
+	)
 	: Na2::Layer(priority)
 	{
+		auto hello_world_txt = asset_manager.create_asset<Na2::Text>("hello_world");
 
+		asset_manager.save_registry();
+
+		hello_world_txt->str() = "hello, world!";
+		hello_world_txt->save("assets/hello_world.txt");
+
+		asset_manager.destroy_asset(hello_world_txt->uuid());
 	}
 
 	GameLayer::~GameLayer(void)

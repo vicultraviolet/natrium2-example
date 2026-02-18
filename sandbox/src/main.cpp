@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 
 	auto app = Na2::MakeUnique<Sandbox::App>();
 
-	app->attach_layer(Na2::MakeRef<Sandbox::GameLayer>());
+	app->attach_layer(Na2::MakeRef<Sandbox::GameLayer>(app->asset_manager()));
 
 	app->run();
 	

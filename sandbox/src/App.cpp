@@ -4,9 +4,10 @@
 namespace Sandbox
 {
 	App::App(void)
-	: m_EventQueue(),
-	  m_Window(1280, 720, "Natrium Sandbox"),
-	  m_LayerManager()
+	: m_AssetManager(Na2::AssetManagerCreateInfo{}),
+	  m_LayerManager(),
+	  m_EventQueue(),
+	  m_Window(1280, 720, "Natrium Sandbox")
 	{
 		m_EventQueue.bind();
 	}
