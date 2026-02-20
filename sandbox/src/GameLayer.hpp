@@ -15,11 +15,13 @@ namespace Sandbox
 		~GameLayer(void);
 
 		void on_event(Na2::Event& e) override;
+		void on_tick(void) override;
 		void on_update(f64 dt) override;
 		void on_draw(void) override;
 		void on_imgui_draw(void) override;
 	private:
 		Na2::Input m_Input;
+		u64 m_FrameCount = 0;
 	};
 } // namespace Sandbox
 

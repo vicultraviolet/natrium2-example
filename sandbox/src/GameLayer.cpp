@@ -29,8 +29,16 @@ namespace Sandbox
 		m_Input.on_event(e);
 	}
 
+	void GameLayer::on_tick(void)
+	{
+		g_Logger.printf(Na2::Debug, "FPS: {}", m_FrameCount);
+		m_FrameCount = 0;
+	}
+
 	void GameLayer::on_update(f64 dt)
 	{
+		m_FrameCount++;
+
 		if (m_Input.key(Na2::Key::A))
 		{
 			g_Logger.printf(Na2::Notice, "A key is being held down!");

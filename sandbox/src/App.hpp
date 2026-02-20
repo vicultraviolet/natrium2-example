@@ -6,6 +6,7 @@
 #include <Natrium2/Layer/LayerManager.hpp>
 #include <Natrium2/Core/EventQueue.hpp>
 #include <Natrium2/Core/Window.hpp>
+#include <Natrium2/Chrono/Accumulator.hpp>
 
 namespace Sandbox
 {
@@ -41,6 +42,8 @@ namespace Sandbox
 
 		Na2::EventQueue m_EventQueue;
 		Na2::Window m_Window;
+
+		Na2::Chrono::Accumulator m_TickAccumulator;
 	};
 } // namespace Sandbox
 
