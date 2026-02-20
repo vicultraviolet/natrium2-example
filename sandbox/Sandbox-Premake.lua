@@ -23,9 +23,10 @@ project "Sandbox"
         "src/",
         "%{na2}include/",
         "%{na2}%{IncludeDirectories.fmt}",
+        "%{na2}%{IncludeDirectories.glfw}",
         "%{na2}%{IncludeDirectories.nlohmann_json}",
         "%{na2}%{IncludeDirectories.stduuid}",
-        "%{na2}%{IncludeDirectories.glfw}",
+        "%{na2}%{IncludeDirectories.glm}",
         "%{na2}dependencies/"
     }
 
